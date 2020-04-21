@@ -1,0 +1,36 @@
+{
+  "name": "buddy-server",
+  "description": "Buddy",
+  "version": "0.0.1",
+  "author": "Rafael Henrique Berro",
+  "license": "ISC",
+  "engines": {
+    "node": ">=8.9.4",
+    "npm": ">=5.6.0"
+  },
+  "scripts": {
+    "console": "NODE_PATH=. nodemon",
+    "start": "NODE_PATH=. nodemon Infra/server/server.js",
+    "create:migration": "sequelize migration:create --name",
+    "create:seed": "sequelize seed:create --name",
+    "database:migrate": "sequelize db:migrate",
+    "database:migrate:undo": "sequelize db:migrate:undo:all",
+    "database:seed": "sequelize db:seed:all",
+    "database:seed:undo": "sequelize db:seed:undo:all",
+    "database:refresh": "yarn database:seed:undo && yarn database:migrate:undo && yarn database:migrate && yarn database:seed"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "faker": "^4.1.0",
+    "mysql2": "^1.5.3",
+    "security-route": "^1.3.1",
+    "sequelize": "^4.24.0",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1",
+    "nodemon": "^1.17.2"
+  }
+}
