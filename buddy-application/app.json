@@ -1,0 +1,10 @@
+{
+  "name": "Buddy",
+  "displayName": "Buddy",
+  "expo": {
+    "sdkVersion": "27.0.0"
+  },
+  "splash": {
+    "image": "source/assets/images/logo.png"
+  }
+}
